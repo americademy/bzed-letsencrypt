@@ -83,6 +83,8 @@ define letsencrypt::request (
 
     $le_command = join([
         $dehydrated,
+        "--register",
+        "--accept-terms",
         "-d ${domain}",
         "-k ${dehydrated_hook}",
         "-t ${challengetype}",
