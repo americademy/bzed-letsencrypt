@@ -85,6 +85,8 @@ define letsencrypt::request (
         $dehydrated,
         "--register",
         "--accept-terms",
+        "&&",
+        $dehydrated,
         "-d ${domain}",
         "-k ${dehydrated_hook}",
         "-t ${challengetype}",
